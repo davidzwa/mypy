@@ -740,6 +740,9 @@ class MessageBuilder:
         self.fail('Result type of {} incompatible in assignment'.format(op),
                   context)
 
+    def unpacking_strings_disallowed(self, context: Context) -> None:
+        self.fail("unpacking a string is disallowed", context)
+
     def overload_signature_incompatible_with_supertype(
             self, name: str, name_in_super: str, supertype: str,
             overload: Overloaded, context: Context) -> None:
